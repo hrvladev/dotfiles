@@ -5,5 +5,8 @@
 
 ;; Require all setup packages
 (dolist (package '(setup-packages
-                   setup-configuration-tools))
+                   setup-configuration-tools
+		   setup-functions
+		   setup-appearance
+		   setup-editor))
   (require package))
