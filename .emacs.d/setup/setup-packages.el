@@ -21,7 +21,13 @@
     (mapc 'install-package packages)))
 
 ;; Install needed packages
-(let ((packages '(use-package)))
+(let ((packages '(; Misc
+                  use-package
+                  rainbow-delimiters
+
+                  ; Themes
+                  zenburn-theme
+                  )))
   (install-packages packages))
 
 (provide 'setup-packages)
