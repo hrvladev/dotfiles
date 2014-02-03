@@ -30,6 +30,7 @@
                   evil
                   ace-jump-mode
                   ido-ubiquitous
+                  yasnippet
 
                   ; Themes
                   zenburn-theme

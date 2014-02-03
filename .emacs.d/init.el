@@ -13,5 +13,6 @@
 
                    setup-evil
                    setup-ace-jump-mode
-                   setup-ido))
+                   setup-ido
+                   setup-yasnippet))
   (require package))
