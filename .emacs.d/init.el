@@ -6,8 +6,10 @@
 ;; Require all setup packages
 (dolist (package '(setup-packages
                    setup-configuration-tools
-		   setup-functions
-		   setup-appearance
-		   setup-editor
-		   setup-global-keybindings))
+                   setup-functions
+                   setup-appearance
+                   setup-editor
+                   setup-global-keybindings
+
+                   setup-evil))
   (require package))

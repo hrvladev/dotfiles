@@ -25,6 +25,9 @@
                   use-package
                   rainbow-delimiters
                   golden-ratio
+                  undo-tree
+                  key-chord
+                  evil
 
                   ; Themes
                   zenburn-theme
