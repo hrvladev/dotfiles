@@ -28,6 +28,7 @@
                   undo-tree
                   key-chord
                   evil
+                  ace-jump-mode
 
                   ; Themes
                   zenburn-theme

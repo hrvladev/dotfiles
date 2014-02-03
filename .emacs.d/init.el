@@ -11,5 +11,6 @@
                    setup-editor
                    setup-global-keybindings
 
-                   setup-evil))
+                   setup-evil
+                   setup-ace-jump-mode))
   (require package))
