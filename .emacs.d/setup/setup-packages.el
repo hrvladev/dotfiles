@@ -29,6 +29,7 @@
                   key-chord
                   evil
                   ace-jump-mode
+                  ido-ubiquitous
 
                   ; Themes
                   zenburn-theme

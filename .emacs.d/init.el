@@ -12,5 +12,6 @@
                    setup-global-keybindings
 
                    setup-evil
-                   setup-ace-jump-mode))
+                   setup-ace-jump-mode
+                   setup-ido))
   (require package))
