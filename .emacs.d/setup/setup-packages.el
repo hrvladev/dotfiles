@@ -24,6 +24,7 @@
 (let ((packages '(; Misc
                   use-package
                   rainbow-delimiters
+                  golden-ratio
 
                   ; Themes
                   zenburn-theme
