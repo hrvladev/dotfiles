@@ -8,5 +8,6 @@
                    setup-configuration-tools
 		   setup-functions
 		   setup-appearance
-		   setup-editor))
+		   setup-editor
+		   setup-global-keybindings))
   (require package))
