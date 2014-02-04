@@ -12,6 +12,7 @@
                    setup-global-keybindings
 
                    setup-evil
+                   setup-undo-tree
                    setup-ace-jump-mode
                    setup-ido
                    setup-yasnippet))
