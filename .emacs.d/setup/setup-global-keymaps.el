@@ -1,15 +1,11 @@
-;; Use hippie-expand instead of dabbrev
+;; Autocompletion
 (global-set-key (kbd "M-/") 'hippie-expand)
 
-;; Replace buffer-menu with ibuffer
+;; Buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (define-key evil-normal-state-map " B" 'ibuffer)
-
-;; Switch to another buffer
 (define-key evil-normal-state-map " b" 'ido-switch-buffer)
-
-;; Save buffer/s
 (define-key evil-normal-state-map " s" 'save-buffer)
-(define-key evil-normal-state-map " S" 'save-some-buffers)
+(define-key evil-normal-state-map " \t" 'switch-to-most-recently-visited-buffer)
 
 (provide 'setup-global-keymaps)
