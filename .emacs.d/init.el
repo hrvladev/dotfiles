@@ -9,9 +9,9 @@
                    setup-functions
                    setup-appearance
                    setup-editor
-                   setup-global-keybindings
-
                    setup-evil
+                   setup-global-keymaps
+
                    setup-undo-tree
                    setup-ace-jump-mode
                    setup-ido
