@@ -4,7 +4,8 @@
 
   :config
   (progn
-    (setq ido-enable-prefix nil
+    (setq ido-everywhere t
+          ido-enable-prefix nil
           ido-enable-flex-matching t
           ido-auto-merge-work-directories-length nil
           ido-create-new-buffer 'always
@@ -15,6 +16,13 @@
 
     (use-package ido-ubiquitous
       :init
-      (ido-ubiquitous-mode t))))
+      (ido-ubiquitous-mode t))
+
+    (use-package flx-ido
+      :init
+      (flx-ido-mode 1)
+
+      :config
+      (setq ido-use-faces nil))))
 
 (provide 'setup-ido)

@@ -31,6 +31,8 @@
                   ace-jump-mode
                   ido-ubiquitous
                   yasnippet
+                  smex
+                  flx-ido
 
                   ; Themes
                   zenburn-theme

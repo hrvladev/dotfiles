@@ -15,5 +15,6 @@
                    setup-undo-tree
                    setup-ace-jump-mode
                    setup-ido
-                   setup-yasnippet))
+                   setup-yasnippet
+                   setup-smex))
   (require package))
