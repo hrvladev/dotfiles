@@ -17,5 +17,6 @@
                    setup-ido
                    setup-yasnippet
                    setup-smex
-                   setup-expand-region))
+                   setup-expand-region
+                   setup-markdown-mode))
   (require package))

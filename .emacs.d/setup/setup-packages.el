@@ -37,6 +37,9 @@
 
                   ; Themes
                   zenburn-theme
+
+                  ; Markdown
+                  markdown-mode
                   )))
   (install-packages packages))
 
