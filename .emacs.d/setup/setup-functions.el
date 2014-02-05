@@ -12,10 +12,4 @@
 
   (if (buffer-file-name) (save-buffer)))
 
-(defun switch-to-most-recently-visited-buffer ()
-  "Switch to the most recently visited buffer."
-  (interactive)
-
-  (switch-to-buffer (other-buffer)))
-
 (provide 'setup-functions)
