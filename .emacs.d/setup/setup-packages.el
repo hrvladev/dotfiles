@@ -33,6 +33,7 @@
                   yasnippet
                   smex
                   flx-ido
+                  expand-region
 
                   ; Themes
                   zenburn-theme

@@ -16,5 +16,6 @@
                    setup-ace-jump-mode
                    setup-ido
                    setup-yasnippet
-                   setup-smex))
+                   setup-smex
+                   setup-expand-region))
   (require package))
