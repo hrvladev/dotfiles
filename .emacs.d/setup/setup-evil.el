@@ -13,8 +13,6 @@
 
     (setq evil-shift-width 2
           evil-move-cursor-back nil
-          evil-cross-lines t)
-
-    (add-hook 'evil-insert-state-exit-hook 'save-file-current-buffer-is-visiting)))
+          evil-cross-lines t)))
 
 (provide 'setup-evil)
