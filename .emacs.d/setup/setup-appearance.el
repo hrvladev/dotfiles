@@ -8,8 +8,8 @@
   (around disable-display-startup-echo-area-message activate))
 
 ;; Highlight matching parentheses when the point is on them
-(show-paren-mode 1)
-(setq show-paren-style 'parentheses)
+;; (show-paren-mode 1)
+;; (setq show-paren-style 'parentheses)
 
 ;; Enable Rainbow Delimiters in all programming-related modes
 (use-package rainbow-delimiters

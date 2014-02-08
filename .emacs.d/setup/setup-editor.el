@@ -12,9 +12,6 @@
 ;; Revert buffers automatically when underlying files are changed externally
 (global-auto-revert-mode t)
 
-;; Automatic parens pairing
-(electric-pair-mode t)
-
 ;; Incremental minibuffer completion
 (icomplete-mode 1)
 

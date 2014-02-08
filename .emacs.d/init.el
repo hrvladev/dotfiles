@@ -18,5 +18,6 @@
                    setup-yasnippet
                    setup-smex
                    setup-expand-region
-                   setup-markdown-mode))
+                   setup-markdown-mode
+                   setup-smartparens))
   (require package))

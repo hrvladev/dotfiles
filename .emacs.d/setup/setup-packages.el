@@ -34,6 +34,7 @@
                   smex
                   flx-ido
                   expand-region
+                  smartparens
 
                   ; Themes
                   zenburn-theme
