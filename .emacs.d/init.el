@@ -29,5 +29,6 @@
                    setup-expand-region
                    setup-markdown-mode
                    setup-smartparens
-                   setup-multiple-cursors))
+                   setup-multiple-cursors
+                   setup-clojure-mode))
   (require package))

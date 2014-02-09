@@ -40,6 +40,9 @@
                   ; Themes
                   zenburn-theme
 
+                  ; Clojure
+                  clojure-mode
+
                   ; Markdown
                   markdown-mode
                   )))
