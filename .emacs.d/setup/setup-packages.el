@@ -35,6 +35,7 @@
                   flx-ido
                   expand-region
                   smartparens
+                  multiple-cursors
 
                   ; Themes
                   zenburn-theme

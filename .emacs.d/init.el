@@ -28,5 +28,6 @@
                    setup-smex
                    setup-expand-region
                    setup-markdown-mode
-                   setup-smartparens))
+                   setup-smartparens
+                   setup-multiple-cursors))
   (require package))
