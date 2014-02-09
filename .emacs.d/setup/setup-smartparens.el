@@ -20,10 +20,10 @@
     (define-key evil-normal-state-map (kbd "C-k") 'sp-up-sexp)
     (define-key evil-normal-state-map (kbd "C-S-k") 'sp-backward-up-sexp)
 
-    (define-key evil-normal-state-map (kbd "C-M-t") 'sp-transpose-sexp)
-
     (define-key evil-normal-state-map (kbd "C-M-l") 'sp-next-sexp)
     (define-key evil-normal-state-map (kbd "C-M-h") 'sp-previous-sexp)
+
+    (define-key evil-normal-state-map "et" 'sp-transpose-sexp)
 
     (define-key evil-normal-state-map "ek" 'sp-kill-sexp)
     (define-key evil-normal-state-map "ey" 'sp-copy-sexp)
