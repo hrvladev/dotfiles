@@ -20,9 +20,13 @@
 
     (use-package flx-ido
       :init
-      (flx-ido-mode 1)
+      (flx-ido-mode t)
 
       :config
-      (setq ido-use-faces nil))))
+      (setq ido-use-faces nil))
+
+    (use-package ido-vertical-mode
+      :init
+      (ido-vertical-mode t))))
 
 (provide 'setup-ido)

@@ -33,6 +33,7 @@
                   yasnippet
                   smex
                   flx-ido
+                  ido-vertical-mode
                   expand-region
                   smartparens
                   multiple-cursors
