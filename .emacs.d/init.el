@@ -1,7 +1,16 @@
+;; Directory structure
+(progn
+  (defvar directory-structure (make-hash-table))
+
+  (puthash :home user-emacs-directory directory-structure)
+  (puthash :setup (expand-file-name "setup" user-emacs-directory) directory-structure)
+  (puthash :savefiles (expand-file-name "savefiles" user-emacs-directory) directory-structure)
+  (puthash :snippets (expand-file-name "snippets" user-emacs-directory) directory-structure))
+
 ;; Load path configuration
-(dolist (path '("~/.emacs.d/"
-                "~/.emacs.d/setup"))
-  (add-to-list 'load-path path))
+(maphash '(lambda (_ directory)
+            (add-to-list 'load-path directory))
+         directory-structure)
 
 ;; Require all setup packages
 (dolist (package '(setup-packages

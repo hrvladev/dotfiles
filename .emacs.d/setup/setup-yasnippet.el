@@ -2,7 +2,7 @@
   :init
   (progn
     ;; Use only own snippets (do not use bundled ones)
-    (setq yas-snippet-dirs "~/.emacs.d/snippets")
+    (setq yas-snippet-dirs (gethash :snippets directory-structure))
 
     ;; Enable Yas minor mode in all buffers
     (yas-global-mode 1)))
