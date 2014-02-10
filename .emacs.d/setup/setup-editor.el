@@ -4,7 +4,7 @@
 
 ;; Don't use tabs to indent
 (setq-default indent-tabs-mode nil
-              tab-width 8)
+              tab-width 2)
 
 ;; Delete the selection with a keypress
 (delete-selection-mode t)
