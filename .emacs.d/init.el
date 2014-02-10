@@ -30,5 +30,6 @@
                    setup-markdown-mode
                    setup-smartparens
                    setup-multiple-cursors
-                   setup-clojure-mode))
+                   setup-clojure-mode
+                   setup-coffee-mode))
   (require package))

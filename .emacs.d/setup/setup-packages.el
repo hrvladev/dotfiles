@@ -38,14 +38,15 @@
                   smartparens
                   multiple-cursors
 
+                  markdown-mode
+                  haml-mode
+                  coffee-mode
+
                   ; Themes
                   zenburn-theme
 
                   ; Clojure
                   clojure-mode
-
-                  ; Markdown
-                  markdown-mode
                   )))
   (install-packages packages))
 
