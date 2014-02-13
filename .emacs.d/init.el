@@ -12,6 +12,12 @@
             (add-to-list 'load-path directory))
          directory-structure)
 
+;; Set PATH
+(push "/usr/local/bin" exec-path)
+(push "/usr/bin" exec-path)
+(push (expand-file-name "~/bin") exec-path)
+(setenv "PATH" (concat "/usr/local/bin:" (expand-file-name "~/bin") ":" (getenv "PATH")))
+
 ;; Require all setup packages
 (dolist (package '(setup-packages
                    setup-configuration-tools
