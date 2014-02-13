@@ -1,6 +1,6 @@
 ;; Misc
 (define-key evil-normal-state-map " l" 'recenter-top-bottom)
-(define-key evil-normal-state-map " \e" 'save-buffers-kill-terminal)
+(define-key evil-normal-state-map " Q" 'save-buffers-kill-terminal)
 
 ;; Autocompletion
 (global-set-key (kbd "M-/") 'hippie-expand)
@@ -11,6 +11,21 @@
 (define-key evil-normal-state-map " b" 'ido-switch-buffer)
 (define-key evil-normal-state-map " s" 'save-buffer)
 (define-key evil-normal-state-map " \t" 'evil-buffer)
+(define-key evil-normal-state-map " k" 'kill-this-buffer)
+
+;; Windows
+(define-key evil-normal-state-map " wo" 'other-window)
+
+(define-key evil-normal-state-map " wk" 'delete-window)
+(define-key evil-normal-state-map " wK" 'delete-other-windows)
+
+(define-key evil-normal-state-map " wb" 'split-window-below)
+(define-key evil-normal-state-map " wr" 'split-window-right)
+
+(define-key evil-normal-state-map " wh" 'windmove-left)
+(define-key evil-normal-state-map " wl" 'windmove-right)
+(define-key evil-normal-state-map " wk" 'windmove-up)
+(define-key evil-normal-state-map " wj" 'windmove-down)
 
 ;; Files
 (define-key evil-normal-state-map " o" 'ido-find-file)
