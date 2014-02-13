@@ -5,9 +5,7 @@
   :config
   (progn
     ;; Keymaps
-    (define-key evil-visual-state-map "W" 'mc/edit-lines)
-    (define-key evil-visual-state-map "L" 'mc/mark-next-like-this)
-    (define-key evil-visual-state-map "H" 'mc/mark-previous-like-this)
-    (define-key evil-visual-state-map "E" 'mc/mark-all-like-this)))
+    (define-key evil-visual-state-map "mn" 'mc/mark-next-like-this)
+    (define-key evil-visual-state-map "ma" 'mc/mark-all-like-this)))
 
 (provide 'setup-multiple-cursors)
