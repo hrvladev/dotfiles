@@ -15,17 +15,10 @@
 
 ;; Windows
 (define-key evil-normal-state-map " wo" 'other-window)
-
 (define-key evil-normal-state-map " wk" 'delete-window)
 (define-key evil-normal-state-map " wK" 'delete-other-windows)
-
 (define-key evil-normal-state-map " wb" 'split-window-below)
 (define-key evil-normal-state-map " wr" 'split-window-right)
-
-(define-key evil-normal-state-map " wh" 'windmove-left)
-(define-key evil-normal-state-map " wl" 'windmove-right)
-(define-key evil-normal-state-map " wk" 'windmove-up)
-(define-key evil-normal-state-map " wj" 'windmove-down)
 
 ;; Files
 (define-key evil-normal-state-map " o" 'ido-find-file)
