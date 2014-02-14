@@ -12,7 +12,7 @@
             (add-to-list 'load-path directory))
          directory-structure)
 
-;; Set PATH
+;; Configure PATH and exec-path
 (push "/usr/local/bin" exec-path)
 (push "/usr/bin" exec-path)
 (push (expand-file-name "~/bin") exec-path)
@@ -37,5 +37,6 @@
                    setup-smartparens
                    setup-multiple-cursors
                    setup-clojure-mode
-                   setup-coffee-mode))
+                   setup-coffee-mode
+                   setup-prolog-mode))
   (require package))
