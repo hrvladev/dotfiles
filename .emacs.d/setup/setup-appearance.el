@@ -54,6 +54,9 @@
                       (abbreviate-file-name (buffer-file-name))
                     "%b"))))
 
+;; Set default font
+(set-default-font "Monospace-11")
+
 ;; Set default theme
 (load-theme 'zenburn t)
 
