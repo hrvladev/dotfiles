@@ -58,6 +58,6 @@
 (set-default-font "Monospace-11")
 
 ;; Set default theme
-(load-theme 'zenburn t)
+(load-theme 'monokai t)
 
 (provide 'setup-appearance)
