@@ -48,7 +48,8 @@
 
                   ; Clojure
                   clojure-mode
-                  )))
+                  clojure-test-mode
+                  cider)))
   (install-packages packages))
 
 (provide 'setup-packages)
