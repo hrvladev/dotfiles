@@ -37,6 +37,7 @@
                   expand-region
                   smartparens
                   multiple-cursors
+                  magit
 
                   markdown-mode
                   haml-mode
