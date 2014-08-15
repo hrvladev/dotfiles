@@ -4,8 +4,11 @@
 (setq mc/cmds-to-run-for-all
       '(
         evil-append
+        evil-append-line
         evil-backward-char
+        evil-change-whole-line
         evil-delete
+        evil-delete-backward-char-and-join
         evil-delete-char
         evil-exit-emacs-state
         evil-forward-char
@@ -16,9 +19,13 @@
         evil-substitute
         keyboard-quit
         smex
+        sp--self-insert-command
+        sp-add-to-previous-sexp
         sp-kill-sexp
+        sp-splice-sexp
         ))
 
 (setq mc/cmds-to-run-once
       '(
+        end-of-buffer
         ))
