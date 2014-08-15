@@ -14,18 +14,20 @@
 (define-key evil-normal-state-map " k" 'kill-this-buffer)
 
 ;; Windows
-(define-key evil-normal-state-map " wo" 'other-window)
+(define-key evil-normal-state-map " o" 'other-window)
 (define-key evil-normal-state-map " wk" 'delete-window)
 (define-key evil-normal-state-map " wK" 'delete-other-windows)
 (define-key evil-normal-state-map " wb" 'split-window-below)
 (define-key evil-normal-state-map " wr" 'split-window-right)
 
 ;; Files
-(define-key evil-normal-state-map " o" 'ido-find-file)
+(define-key evil-normal-state-map " f" 'ido-find-file)
 
 ;; Text navigation
 (define-key evil-normal-state-map "H" 'evil-first-non-blank)
 (define-key evil-normal-state-map "L" 'evil-last-non-blank)
+(define-key evil-visual-state-map "H" 'evil-first-non-blank)
+(define-key evil-visual-state-map "L" 'evil-last-non-blank)
 
 ;;; Esc quits
 (global-set-key [escape] 'keyboard-quit)
