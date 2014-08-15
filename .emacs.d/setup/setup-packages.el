@@ -44,6 +44,7 @@
 
                   ; Themes
                   zenburn-theme
+                  monokai-theme
 
                   ; Clojure
                   clojure-mode
