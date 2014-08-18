@@ -38,6 +38,7 @@
                   smartparens
                   multiple-cursors
                   magit
+                  projectile
 
                   markdown-mode
                   haml-mode

@@ -38,5 +38,6 @@
                    setup-multiple-cursors
                    setup-clojure-mode
                    setup-coffee-mode
-                   setup-prolog-mode))
+                   setup-prolog-mode
+                   setup-projectile))
   (require package))
