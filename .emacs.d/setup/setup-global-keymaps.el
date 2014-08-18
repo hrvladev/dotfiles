@@ -1,6 +1,7 @@
 ;; Misc
 (define-key evil-normal-state-map " l" 'recenter-top-bottom)
 (define-key evil-normal-state-map " Q" 'save-buffers-kill-terminal)
+(define-key evil-normal-state-map " m" 'magit-status)
 
 ;; Autocompletion
 (global-set-key (kbd "M-/") 'hippie-expand)
