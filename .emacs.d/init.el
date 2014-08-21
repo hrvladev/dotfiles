@@ -5,9 +5,12 @@
   (puthash :home user-emacs-directory directory-structure)
   (puthash :setup (expand-file-name "setup" user-emacs-directory) directory-structure)
   (puthash :savefiles (expand-file-name "savefiles" user-emacs-directory) directory-structure)
-  (puthash :snippets (expand-file-name "snippets" user-emacs-directory) directory-structure))
+  (puthash :snippets (expand-file-name "snippets" user-emacs-directory) directory-structure)
+  (puthash :themes (expand-file-name "themes" user-emacs-directory) directory-structure))
 
 ;; Load path configuration
+(add-to-list 'custom-theme-load-path (gethash :themes directory-structure))
+
 (maphash '(lambda (_ directory)
             (add-to-list 'load-path directory))
          directory-structure)

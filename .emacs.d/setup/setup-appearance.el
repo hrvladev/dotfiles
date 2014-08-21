@@ -58,6 +58,6 @@
 (set-default-font "Monospace-11")
 
 ;; Set default theme
-(load-theme 'monokai t)
+(load-theme 'jazz t)
 
 (provide 'setup-appearance)
