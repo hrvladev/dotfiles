@@ -1,4 +1,4 @@
-source ~/dotfiles/zsh/setup/functions/git_prompt.zsh
+source ~/Projects/dotfiles/zsh/setup/functions/git_prompt.zsh
 
 function p_colored_path {
   local slash="${BOLD_CYAN}/${RESET}"

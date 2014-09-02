@@ -1,4 +1,4 @@
-for file in ~/dotfiles/zsh/setup/*.zsh; do
+for file in ~/Projects/dotfiles/zsh/setup/*.zsh; do
   source $file
 done
 

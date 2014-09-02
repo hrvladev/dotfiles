@@ -55,7 +55,11 @@
                     "%b"))))
 
 ;; Set default font
-(set-default-font "Monospace-11")
+(set-default-font "Inconsolata 13")
+(set-face-attribute 'default nil
+                    :family "Inconsolata"
+                    :height 145
+                    :weight 'normal)
 
 ;; Set default theme
 (load-theme 'jazz t)

@@ -57,6 +57,10 @@
                                          try-complete-lisp-symbol-partially
                                          try-complete-lisp-symbol))
 
+;; Mac modifiers
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier 'super)
+
 ;;; Hooks
 
 ;; Cleanup buffer and keep it decent on save
