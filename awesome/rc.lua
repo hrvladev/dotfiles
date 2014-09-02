@@ -48,9 +48,9 @@ end
 beautiful.init("/home/hristo/.config/awesome/themes/zenburn-hv/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "lxterminal"
-editor = os.getenv("EDITOR") or "emacsclient -c"
-editor_cmd = terminal .. " -e " .. editor
+terminal = "urxvt"
+editor = "emacsclient -c"
+editor_cmd = "emacsclient -t"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -249,7 +249,7 @@ local layouts =
    -- {{{ Key bindings
    globalkeys = awful.util.table.join(
       -- Application launchers
-      awful.key({ }, "XF86Launch1", function () awful.util.spawn("emacsclient -c") end),
+      awful.key({ modkey }, "e", function () awful.util.spawn("emacsclient -c") end),
       awful.key({ }, "XF86HomePage", function () awful.util.spawn("chromium") end),
       awful.key({ }, "XF86Launch2", function () awful.util.spawn("sonata") end),
       awful.key({ }, "XF86Mail", function () awful.util.spawn("thunar") end),
@@ -397,7 +397,7 @@ local layouts =
    -- {{{ Rules
    if screen.count() == 2 then
       app_location_rules = {
-         { rule = { class = "Lxterminal",  instance = "lxterminal" },  properties = { tag = tags[1][1], switchtotag = true } },
+         { rule = { class = "URxvt",       instance = "urxvt" },       properties = { tag = tags[1][1], switchtotag = true } },
          { rule = { class = "Skype",       instance = "skype" },       properties = { tag = tags[1][2], switchtotag = true } },
          { rule = { class = "Thunar",      instance = "thunar" },      properties = { tag = tags[1][3], switchtotag = true } },
          { rule = { class = "Qbittorrent", instance = "qbittorrent" }, properties = { tag = tags[1][4], switchtotag = true } },
@@ -412,7 +412,7 @@ local layouts =
       }
    else
       app_location_rules = {
-         { rule = { class = "Lxterminal",  instance = "lxterminal" },  properties = { tag = tags[1][1], switchtotag = true } },
+         { rule = { class = "URxvt",       instance = "urxvt" },       properties = { tag = tags[1][1], switchtotag = true } },
          { rule = { class = "Chromium",    instance = "chromium" },    properties = { tag = tags[1][2], switchtotag = true } },
          { rule = { class = "Liferea",     instance = "liferea" },     properties = { tag = tags[1][2], switchtotag = true } },
          { rule = { class = "Emacs",       instance = "emacs" },       properties = { tag = tags[1][3], switchtotag = true } },
