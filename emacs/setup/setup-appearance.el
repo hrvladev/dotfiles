@@ -62,6 +62,6 @@
                     :weight 'normal)
 
 ;; Set default theme
-(load-theme 'jazz t)
+(load-theme 'zenburn t)
 
 (provide 'setup-appearance)
