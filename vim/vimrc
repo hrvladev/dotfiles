@@ -1,0 +1,285 @@
+" vim:foldmethod=marker:foldlevel=0
+
+packadd! matchit
+
+" ============================================================================
+" Misc {{{
+" ============================================================================
+
+filetype plugin indent on
+
+set autoread
+set backspace=indent,eol,start
+set clipboard=unnamed
+set directory=$HOME/.vim/tmp//
+set encoding=utf-8
+set foldenable
+set history=1000
+set nostartofline
+
+" }}}
+" ============================================================================
+" Colors & UI {{{
+" ============================================================================
+
+if !exists("g:syntax_on")
+  syntax enable
+endif
+
+colorscheme quill
+
+set fillchars=vert:│,fold:\ ,diff:-
+set cursorline
+set laststatus=2
+set mouse=a
+set noerrorbells
+set number
+set scrolloff=5
+set showcmd
+set splitbelow
+set splitright
+set visualbell
+set wildmenu
+set wildmode=longest,full
+
+if has('gui_running')
+  set gcr=a:blinkon0
+  set guifont=Menlo:h14
+  set guioptions=0
+  set linespace=4
+else
+  set termguicolors
+
+  " http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+" }}}
+" ============================================================================
+" Searching {{{
+" ============================================================================
+
+set hlsearch
+set incsearch
+set smartcase
+
+" }}}
+" ============================================================================
+" Formatting {{{
+" ============================================================================
+
+set autoindent
+set expandtab
+set shiftwidth=2
+set tabstop=2
+
+set formatoptions+=j
+set linebreak
+
+" }}}
+" ============================================================================
+" Functions {{{
+" ============================================================================
+
+function! s:HighlightGroupUnderCursor()
+  if !exists("*synstack")
+    return
+  endif
+
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+function! s:OpenHelpInNewTab()
+  if &buftype == 'help'
+    if winnr('$') > 1
+      wincmd T
+    endif
+
+    nnoremap <buffer> q :q<cr>
+  endif
+endfunction
+
+" }}}
+" ============================================================================
+" Mappings {{{
+" ============================================================================
+
+let mapleader      = "\<Space>"
+let maplocalleader = "\<Space>"
+
+" Escaping
+inoremap jk <Esc>
+cnoremap jk <C-c>
+
+" Quit
+nnoremap <Leader>q :q<CR>
+
+" Saving
+nnoremap <silent> <leader>s :update<CR>
+
+" Use j and k to navigate between wrapped lines too
+vnoremap j gj
+vnoremap k gk
+nnoremap j gj
+nnoremap k gk
+
+" Easier way to reach beginning/end of line
+nnoremap H ^
+nnoremap L $
+xnoremap H ^
+xnoremap L $
+
+" Moving lines
+xnoremap <silent> <C-j> :move'>+<CR>gv
+xnoremap <silent> <C-k> :move-2<CR>gv
+xnoremap <silent> <C-h> <gv
+xnoremap <silent> <C-l> >gv
+
+" Go to tab by number
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>6 6gt
+nnoremap <leader>7 7gt
+nnoremap <leader>8 8gt
+nnoremap <leader>9 9gt
+nnoremap <leader>0 :tablast<CR>
+
+" Fast window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Switch to alternate buffer
+nnoremap <Leader><TAB> <C-^>
+
+" Splits
+nnoremap <Leader>\| :vsplit<CR>
+nnoremap <Leader>- :split<CR>
+
+" Make Y behave like other capitals
+nnoremap Y y$
+
+" Clear search highlights
+nnoremap <Leader>c :nohlsearch<CR>
+
+" Auto center on matched string
+nnoremap n nzz
+nnoremap N Nzz
+
+" Open/reload vimrc
+nnoremap <F1> :tabnew $MYVIMRC<CR>
+nnoremap <F2> :source $MYVIMRC<CR>
+
+" }}}
+" ============================================================================
+" Commands {{{
+" ============================================================================
+
+command! HighlightGroupUnderCursor call <SID>HighlightGroupUnderCursor()
+
+" }}}
+" ============================================================================
+" Autocommands {{{
+" ============================================================================
+
+augroup vimrc
+  autocmd!
+
+  autocmd BufWritePre * :%s/\s\+$//e " Remove trailing whitespace on save
+  autocmd BufEnter *.txt call <SID>OpenHelpInNewTab()
+augroup END
+
+" }}}
+" ============================================================================
+" Statusline {{{
+" ============================================================================
+
+let s:statusLineSeparator = ' · '
+
+function! MyStatusLineGitInfo()
+  let l:branchName = fugitive#head()
+
+  return empty(l:branchName) ? '' : ' ᚠ '. l:branchName . s:statusLineSeparator "repeat(' ', 5)
+endfunction
+
+function! MyStatusLineFileEOL()
+  let l:eol = get({'dos': 'CRLF', 'unix': 'LF', 'mac': 'CR'}, &fileformat, '')
+
+  return empty(l:eol) ? '' : l:eol . s:statusLineSeparator
+endfunction
+
+function! MyStatusLineFileEncoding()
+  return toupper(empty(&fileencoding) ? &encoding : &fileencoding) . s:statusLineSeparator
+endfunction
+
+function! MyStatusLineFiletype()
+  return empty(&filetype) ? '' : &filetype . s:statusLineSeparator
+endfunction
+
+"       \ '%{MyStatusLineGitInfo()}' .
+function! MyStatusLine()
+  return ' %t %m%r ' .
+       \ '%=%<' .
+       \ '%{MyStatusLineFileEOL()}' .
+       \ '%{MyStatusLineFileEncoding()}' .
+       \ '%{MyStatusLineFiletype()}' .
+       \ '%l:%c '
+endfunction
+
+set statusline=%!MyStatusLine()
+
+" }}}
+" ============================================================================
+" Tabline {{{
+" ============================================================================
+
+function! MyTabLine()
+  let s = ''
+  for i in range(1, tabpagenr('$'))
+    " select the highlighting
+    if i == tabpagenr()
+      let s .= '%#TabLineSel#'
+    else
+      let s .= '%#TabLine#'
+    endif
+
+    " set the tab page number (for mouse clicks)
+    let s .= '%' . i . 'T'
+
+    " the label is made by MyTabLabel()
+    if i == tabpagenr()
+      let s .= ' [ ' . i . ' ] %{MyTabLabel(' . i . ')}  '
+    else
+      let s .= ' [ ' . i . ' ] %{MyTabLabel(' . i . ')}  '
+    endif
+  endfor
+
+  " after the last tab fill with TabLineFill and reset tab page nr
+  let s .= '%#TabLineFill#%T'
+
+  " right-align the label to close the current tab page
+  if tabpagenr('$') > 1
+    let s .= '%=%#TabLine#%999X✕%X '
+  endif
+
+  return s
+endfunction
+
+function! MyTabLabel(n)
+  let buflist = tabpagebuflist(a:n)
+  let winnr = tabpagewinnr(a:n)
+  let label = expand('#' . buflist[winnr - 1] . ':t')
+
+  return empty(label) ? 'Untitled' : label
+endfunction
+
+set tabline=%!MyTabLine()
+
+" }}}
+" ============================================================================
