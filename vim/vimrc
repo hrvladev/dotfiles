@@ -277,11 +277,19 @@ set tabline=%!MyTabLine()
 
 set fillchars+=fold:\ ,
 set foldenable
+set foldcolumn=2
 
 function! MyFoldText()
-  return '[⋯] ' . substitute(foldtext(), '+--\|\s\+\d\+ lines: ', '', 'g')
+  return substitute(foldtext(), '+-\+\|\s\+\d\+ lines: ', '', 'g')
 endfunction
 
 set foldtext=MyFoldText()
+
+nnoremap <Leader>fj zo
+nnoremap <Leader>fJ zO
+nnoremap <Leader>fk zc
+nnoremap <Leader>fK zC
+nnoremap <Leader>fa zR
+nnoremap <Leader>fA zM
 
 " }}} ========================================================================
