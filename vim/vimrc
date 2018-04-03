@@ -156,10 +156,6 @@ nnoremap Y y$
 " Clear search highlights
 nnoremap <Leader>c :nohlsearch<CR>
 
-" Auto center on matched string
-nnoremap n nzz
-nnoremap N Nzz
-
 " Open/reload vimrc
 nnoremap <F1> :tabnew $MYVIMRC<CR>
 nnoremap <F2> :source $MYVIMRC<CR>
