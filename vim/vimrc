@@ -299,6 +299,22 @@ Plug 'hrvladev/quill'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 
+" Ruby
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+
+" JavaScript
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+Plug 'mtscout6/vim-cjsx'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+
+" HTML & CSS
+Plug 'hail2u/vim-css3-syntax'
+Plug 'othree/html5.vim'
+Plug 'slim-template/vim-slim'
+
 " Misc
 Plug 'janko-m/vim-test'
 Plug 'gerw/vim-HiLinkTrace'
