@@ -4,3 +4,4 @@ vim/pack
 vim/tmp
 vim/plugged
 vim/autoload
+vim/.netrwhist
