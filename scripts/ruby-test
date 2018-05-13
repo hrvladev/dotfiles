@@ -1,0 +1,24 @@
+#!/usr/bin/env ruby
+#
+# Inspired by Destroy All Software screencast #10
+# http://destroyallsoftware.com/screencasts/catalog/fast-tests-with-and-without-rails
+#
+# Put this in the bin/ directory of your Rails app, then run it with a spec
+# filename. If the spec uses rails_helper, it'll be run inside Bundler.
+# Otherwise, it'll be run directly with whatever `rspec` executable is on the
+# path.
+
+def rails_helper_required?(filename)
+  `head -n 5 #{filename.gsub(/:\d+\Z/, '')}` =~ /^require .rails_helper.$/
+end
+
+def rails_needed?(filename)
+  filename == 'spec' || rails_helper_required?(filename)
+end
+
+filename = ARGV.first || 'spec'
+rspec    = rails_needed?(filename) ? './bin/rspec' : 'rspec'
+command  = "env RAILS_ENV=test #{rspec} #{filename}"
+
+puts command
+exec command
