@@ -89,6 +89,16 @@ function! s:OpenHelpInNewTab()
   endif
 endfunction
 
+function! s:RubyTestFile(filename)
+  execute 'tabnew | terminal ++curwin /usr/local/bin/ruby-test ' . a:filename
+
+  nnoremap <buffer> q :q<cr>
+endfunction
+
+function! s:RubyTestUnderCursor(filename, line_number)
+  call <SID>RubyTestFile(a:filename . ':' . a:line_number)
+endfunction
+
 " }}} ========================================================================
 " Mappings {{{ ===============================================================
 
@@ -316,7 +326,6 @@ Plug 'othree/html5.vim'
 Plug 'slim-template/vim-slim'
 
 " Misc
-Plug 'janko-m/vim-test'
 Plug 'gerw/vim-HiLinkTrace'
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 
@@ -339,10 +348,12 @@ colorscheme quill
 " }}} ========================================================================
 " Tests {{{ ==================================================================
 
-nmap <silent> <leader>tt :TestNearest<CR>
-nmap <silent> <leader>tf :TestFile<CR>
-nmap <silent> <leader>tl :TestLast<CR>
-nmap <silent> <leader>tg :TestVisit<CR>
+augroup ruby_test
+  autocmd!
+
+  autocmd FileType ruby nnoremap <buffer> <leader>l :call <SID>RubyTestFile(expand('%'))<CR>
+  autocmd FileType ruby nnoremap <buffer> <leader>L :call <SID>RubyTestUnderCursor(expand('%'), line('.'))<CR>
+augroup END
 
 " }}} ========================================================================
 " Vimwiki {{{ ================================================================
