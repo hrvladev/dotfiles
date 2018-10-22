@@ -1,0 +1,7 @@
+[user]
+	email = hr.vladev@gmail.com
+	name = Hristo Vladev
+[core]
+	excludesfile = /Users/hrvladev/.gitignore_global
+[rerere]
+	enabled = true
