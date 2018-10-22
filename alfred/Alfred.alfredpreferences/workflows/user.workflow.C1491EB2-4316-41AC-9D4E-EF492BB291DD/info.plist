@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.hrvladev.toggleappearance</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>F3043694-3CD4-4139-9A97-EC8DBBD838BF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2087B53D-3416-4208-BF10-D68E1F421817</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>hrvladev</string>
+	<key>description</key>
+	<string>Toggle between dark and light mode</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Toggle Appearance</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	tell application "System Events"
+		tell appearance preferences to set dark mode to not dark mode
+
+		if (dark mode of appearance preferences) then
+			tell application "Alfred 3" to set theme "Dark Mode"
+			tell appearance preferences to set appearance to graphite
+			tell appearance preferences to set highlight color to graphite
+		else
+			tell application "Alfred 3" to set theme "Light Mode"
+			tell appearance preferences to set appearance to blue
+			tell appearance preferences to set highlight color to blue
+		end if
+	end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>2087B53D-3416-4208-BF10-D68E1F421817</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ta</string>
+				<key>subtext</key>
+				<string>Toggle between dark and light mode</string>
+				<key>text</key>
+				<string>Toggle Appearance</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>F3043694-3CD4-4139-9A97-EC8DBBD838BF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>2087B53D-3416-4208-BF10-D68E1F421817</key>
+		<dict>
+			<key>xpos</key>
+			<integer>360</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>F3043694-3CD4-4139-9A97-EC8DBBD838BF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>70</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://hrvladev.com</string>
+</dict>
+</plist>
