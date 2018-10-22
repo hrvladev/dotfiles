@@ -5,3 +5,5 @@ vim/tmp
 vim/plugged
 vim/autoload
 vim/.netrwhist
+
+fish/fishd.*
