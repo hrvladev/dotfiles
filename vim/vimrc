@@ -13,6 +13,7 @@ set directory=$HOME/.vim/tmp//
 set encoding=utf-8
 set history=1000
 set nostartofline
+set viminfo+=n$HOME/.vim/viminfo
 
 " }}} ========================================================================
 " Colors & UI {{{ ============================================================

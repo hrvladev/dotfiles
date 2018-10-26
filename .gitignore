@@ -1,9 +1,10 @@
 .DS_Store
 
-vim/pack
-vim/tmp
-vim/plugged
-vim/autoload
 vim/.netrwhist
+vim/autoload
+vim/pack
+vim/plugged
+vim/tmp
+vim/viminfo
 
 fish/fishd.*
