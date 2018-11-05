@@ -8,4 +8,3 @@ source /usr/local/share/chruby/chruby.fish
 source /usr/local/share/chruby/auto.fish
 
 set -x EDITOR vim
-set -x FZF_DEFAULT_COMMAND 'ag -g ""'
