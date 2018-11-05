@@ -1,0 +1,150 @@
+#!/usr/bin/env bash
+
+dotfiles_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
+
+continue_or_abort() {
+  select input in 'Continue' 'Abort'; do
+    case $input in
+      'Continue' ) break;;
+      'Abort' ) exit;;
+    esac
+  done
+}
+
+echo '========================================================================='
+echo 'Validations'
+echo '========================================================================='
+echo
+if ! [[ -x "$(command -v brew)" ]]; then
+  echo 'Error: Homebrew is not installed.'
+  open 'https://brew.sh'
+  exit 1
+fi
+echo 'Homebrew is installed. [OK]'
+if ! [[ -d ~/.config ]]; then
+  mkdir ~/.config
+fi
+echo '~/.config is present. [OK]'
+echo
+continue_or_abort
+echo
+
+echo '========================================================================='
+echo 'Fish Shell'
+echo '========================================================================='
+echo
+echo '==> Installing...'
+brew install fish > /dev/null || exit 1
+echo
+echo '==> Symlinking configuration...'
+rm -r ~/.config/fish &> /dev/null
+ln -s $dotfiles_dir/fish/ ~/.config/fish
+echo
+echo '==> Brew Info'
+brew info fish
+echo
+continue_or_abort
+echo
+
+echo '========================================================================='
+echo 'Git'
+echo '========================================================================='
+echo
+echo '==> Installing...'
+brew install git > /dev/null || exit 1
+echo
+echo '==> Symlinking configuration...'
+ln -s $dotfiles_dir/git/ ~/.config/git
+echo
+echo '==> Brew Info'
+brew info git
+echo
+continue_or_abort
+echo
+
+echo '========================================================================='
+echo 'Vim'
+echo '========================================================================='
+echo
+echo '==> Installing...'
+brew install vim > /dev/null || exit 1
+echo
+echo '==> Symlinking configuration...'
+ln -s $dotfiles_dir/vim/ ~/.vim
+mkdir ~/.vim/tmp
+ln -s $dotfiles_dir/scripts/ruby-test /usr/local/bin/ruby-test
+echo
+echo '==> Brew Info'
+brew info vim
+echo
+continue_or_abort
+echo
+
+echo '========================================================================='
+echo 'Fzf'
+echo '========================================================================='
+echo
+echo '==> Installing...'
+brew install fzf > /dev/null || exit 1
+echo
+echo '==> Brew Info'
+brew info fzf
+echo
+continue_or_abort
+echo
+
+echo '========================================================================='
+echo 'The Silver Searcher'
+echo '========================================================================='
+echo
+echo '==> Installing...'
+brew install the_silver_searcher > /dev/null || exit 1
+echo
+echo '==> Brew Info'
+brew info the_silver_searcher
+echo
+continue_or_abort
+echo
+
+echo '========================================================================='
+echo 'Ruby'
+echo '========================================================================='
+echo
+echo '==> Installing ruby-install...'
+brew install ruby-install > /dev/null || exit 1
+echo
+echo '==> Brew Info'
+brew info ruby-install
+echo
+continue_or_abort
+echo
+echo '==> Installing the current stable version of Ruby...'
+ruby-install ruby > /dev/null || exit 1
+echo
+echo '==> Rubies:'
+ls -l ~/.rubies/
+echo
+continue_or_abort
+echo
+echo '==> Installing chruby...'
+brew install chruby > /dev/null || exit 1
+echo
+echo '==> Brew Info'
+brew info chruby
+echo
+continue_or_abort
+echo
+echo '==> Installing chruby-fish...'
+brew install chruby-fish > /dev/null || exit 1
+echo
+echo '==> Brew Info'
+brew info chruby-fish
+echo
+continue_or_abort
+echo
+echo '==> Setting default Ruby...'
+echo "$(ls ~/.rubies/)" > ~/.ruby-version
+echo
+
+echo '-------------------------------------------------------------------------'
+echo 'SUCCESS!'
