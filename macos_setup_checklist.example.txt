@@ -1,0 +1,31 @@
+macOS set-up checklist
+======================
+
+[ ] - System Preferences
+[ ] - ~/.ssh
+[ ] - git clone git@github.com:hrvladev/dotfiles.git && cd dotfiles && ./install
+[ ] - Homebrew (https://brew.sh)
+[ ] - brew install fish
+[ ] - brew install git
+[ ] - brew install vim
+[ ] - brew install fzf
+[ ] - brew install the_silver_searcher
+[ ] - brew install ruby-install
+[ ] - ruby-install ruby
+[ ] - brew install chruby
+[ ] - brew install chruby-fish
+[ ] - App Store (Pages, Numbers, Keynote, iMovie, GarageBand, Xcode)
+[ ] - mkdir ~/Applications
+[ ] - Alfred
+[ ] - Atom
+[ ] - Google Chrome
+[ ] - Guitar Pro
+[ ] - iTerm
+[ ] - MacVim
+[ ] - Spectacle
+[ ] - Spotify
+[ ] - Steam
+[ ] - The Unarchiver
+[ ] - Transmission
+[ ] - VLC
+[ ] - Copy data from the backup drive
