@@ -91,13 +91,23 @@ function! s:OpenHelpInNewTab()
 endfunction
 
 function! s:RubyTestFile(filename)
-  execute 'tabnew | terminal ++curwin /usr/local/bin/ruby-test ' . a:filename
+  execute 'split | terminal ++curwin /usr/local/bin/ruby-test ' . a:filename
 
   nnoremap <buffer> q :q<cr>
 endfunction
 
 function! s:RubyTestUnderCursor(filename, line_number)
   call <SID>RubyTestFile(a:filename . ':' . a:line_number)
+endfunction
+
+function! s:OpenTodo()
+  vsplit
+  edit ~/Desktop/todo.txt
+  vertical resize 70
+
+  nnoremap <buffer> x 0f]hrx
+  nnoremap <buffer> X 0f]hr<space>
+  nnoremap <buffer> q :q<CR>
 endfunction
 
 " }}} ========================================================================
@@ -134,7 +144,7 @@ xnoremap <silent> <C-k> :move-2<CR>gv
 xnoremap <silent> <C-h> <gv
 xnoremap <silent> <C-l> >gv
 
-" Go to tab by number
+" Tabs navigation
 nnoremap <leader>1 1gt
 nnoremap <leader>2 2gt
 nnoremap <leader>3 3gt
@@ -145,6 +155,9 @@ nnoremap <leader>7 7gt
 nnoremap <leader>8 8gt
 nnoremap <leader>9 9gt
 nnoremap <leader>0 :tablast<CR>
+
+nnoremap <leader>[ gT<CR>
+nnoremap <leader>] gt<CR>
 
 " Fast window navigation
 nnoremap <C-h> <C-w>h
@@ -168,6 +181,9 @@ nnoremap <Leader>c :nohlsearch<CR>
 " Open/reload vimrc
 nnoremap <F1> :tabnew $MYVIMRC<CR>
 nnoremap <F2> :source $MYVIMRC<CR>
+
+" Open todo
+nnoremap <Leader>\ :call <SID>OpenTodo()<CR>
 
 " }}} ========================================================================
 " Commands {{{ ===============================================================
@@ -345,6 +361,7 @@ nnoremap <leader>? :Ag<space><C-r><C-w><CR>
 " Themes {{{ =================================================================
 
 colorscheme quill
+"colorscheme base16-solarized-light
 
 " }}} ========================================================================
 " Tests {{{ ==================================================================
